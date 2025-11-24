@@ -1,0 +1,64 @@
+:root {
+  /* Base Colors */
+  --a-white: #ffffff;
+  --a-black: #000000;
+
+  /* Minimalist Light Theme */
+  --a-bg-primary: #ffffff;
+  --a-bg-secondary: #f8f9fa;
+  --a-bg-accent: #f1f3f5;
+
+  /* Text Colors */
+  --a-text-primary: #1a1a1a;
+  --a-text-secondary: #6c757d;
+  --a-text-light: #adb5bd;
+  --a-text-accent: #495057;
+
+  /* Accent Colors */
+  --a-accent-primary: #212529;
+  --a-accent-secondary: #495057;
+  --a-accent-hover: #343a40;
+
+  /* Border Colors */
+  --a-border-light: #e9ecef;
+  --a-border-medium: #dee2e6;
+  --a-border-dark: #ced4da;
+
+  /* Interactive Colors */
+  --a-link: #212529;
+  --a-link-hover: #495057;
+  --a-focus: #212529;
+
+  /* Status Colors */
+  --a-success: #28a745;
+  --a-error: #dc3545;
+  --a-warning: #ffc107;
+  --a-info: #17a2b8;
+}
+
+/* Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --a-bg-primary: #1a1a1a;
+    --a-bg-secondary: #212529;
+    --a-bg-accent: #2d3238;
+
+    --a-text-primary: #ffffff;
+    --a-text-secondary: #adb5bd;
+    --a-text-light: #6c757d;
+    --a-text-accent: #ced4da;
+
+    --a-accent-primary: #ffffff;
+    --a-accent-secondary: #f8f9fa;
+    --a-accent-hover: #e9ecef;
+
+    --a-border-light: #343a40;
+    --a-border-medium: #495057;
+    --a-border-dark: #6c757d;
+
+    --a-link: #ffffff;
+    --a-link-hover: #f8f9fa;
+    --a-focus: #ffffff;
+  }
+}
+

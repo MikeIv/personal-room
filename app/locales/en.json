@@ -1,0 +1,23 @@
+{
+  "button_name": {
+    "next": "Next"
+  },
+  "info": {
+    "develop": "In development"
+  },
+  "navigation": {
+    "portf": "Portfolio",
+    "tools": "Tools",
+    "useful": "Useful",
+    "sandbox": "Sandbox",
+    "contacts": "Contacts"
+  },
+  "tools": {
+    "technologies": "Technologies and tools",
+    "links": "Links",
+    "dependencies": "Dependencies",
+    "modules": "Modules"
+  },
+  "portfolio": []
+}
+

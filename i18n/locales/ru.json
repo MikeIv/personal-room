@@ -1,0 +1,136 @@
+{
+  "button_name": {
+    "next": "Далее"
+  },
+  "info": {
+    "develop": "В разработке"
+  },
+  "navigation": {
+    "portf": "Портфолио",
+    "tools": "Инструменты",
+    "useful": "Полезное",
+    "sandbox": "Песочница",
+    "contacts": "Контакты"
+  },
+  "tools": {
+    "technologies": "Технологии и инструменты",
+    "links": "Ссылки",
+    "dependencies": "Зависимости",
+    "modules": "Модули"
+  },
+  "portfolio": [
+    {
+      "name": "Автодом",
+      "img": "016.jpg",
+      "imgMob": "016-mob.jpg",
+      "description": "Коммерческий проект. Командная работа. Разработка компонентов. Создание методов. Подключение API",
+      "link": "https://avtodom.ru/"
+    },
+    {
+      "name": "SynergyHUB",
+      "img": "011.jpg",
+      "imgMob": "011-mob.jpg",
+      "description": "Коммерческий проект. Командная работа. Разработка компонентов. Создание методов. Подключение API",
+      "link": "https://synergyhub.ru/"
+    },
+    {
+      "name": "SynergyFrends",
+      "img": "014.jpg",
+      "imgMob": "014-mob.jpg",
+      "description": "Коммерческий проект. Командная работа. Доработка интерфейса",
+      "link": "https://friends.synergy.ru/"
+    },
+    {
+      "name": "SynergyFrendsLK",
+      "img": "015.jpg",
+      "imgMob": "015-mob.jpg",
+      "description": "Коммерческий проект. Командная работа. Новый проект на основе логики страрого, с добавлением новых модулей. Для авторизованных пользователей.",
+      "link": "https://friends.synergy.ru/my/"
+    },
+    {
+      "name": "SynergyGlobalTrade",
+      "img": "012.jpg",
+      "imgMob": "012-mob.jpg",
+      "description": "Коммерческий проект. Командная работа. Разработка компонентов. Создание методов. Подключение API",
+      "link": "https://sglobaltrade.ru/"
+    },
+    {
+      "name": "SynergyStart",
+      "img": "013.jpg",
+      "imgMob": "013-mob.jpg",
+      "description": "Коммерческий проект. Командная работа. Разработка компонентов. Создание методов. Подключение API",
+      "link": "https://synergystart.ru/"
+    },
+    {
+      "name": "Армянские новости",
+      "img": "010.jpg",
+      "imgMob": "010-mob.jpg",
+      "description": "Коммерческий проект. Верстка по утвержденному дизайну",
+      "link": "https://armenia.im/"
+    },
+    {
+      "name": "Elza Lashes",
+      "img": "009.jpg",
+      "imgMob": "009-mob.jpg",
+      "description": "Коммерческий проект. Дизайн. Верстка",
+      "link": "https://mikeiv.github.io/Elza Lashes/"
+    },
+    {
+      "name": "Круизный дом",
+      "img": "008.jpg",
+      "imgMob": "008-mob.jpg",
+      "description": "Коммерческий проект. Верстка. Создание логики взаимодействия компонентов на нативном js",
+      "link": "https://www.mcruises.ru/"
+    },
+    {
+      "name": "Void",
+      "img": "007.jpg",
+      "imgMob": "007-mob.jpg",
+      "description": "Коммерческий проект. Дизайн. Верстка",
+      "link": "https://mikeiv.github.io/void/"
+    },
+    {
+      "name": "Stickerlabel",
+      "img": "006.jpg",
+      "imgMob": "006-mob.jpg",
+      "description": "Коммерческий проект. Дизайн. Верстка",
+      "link": "https://mikeiv.github.io/stickerlabel/"
+    },
+    {
+      "name": "Almatyathletics",
+      "img": "005.jpg",
+      "imgMob": "005-mob.jpg",
+      "description": "Коммерческий проект. Дизайн. Верстка",
+      "link": "https://mikeiv.github.io/almatyathletics/"
+    },
+    {
+      "name": "Pink",
+      "img": "004.jpg",
+      "imgMob": "004-mob.jpg",
+      "description": "Дипломный проект HTML Academy. Статичная верстка с адаптивом",
+      "link": "https://mikeiv.github.io/pink/"
+    },
+    {
+      "name": "VoGoo",
+      "img": "001.jpg",
+      "imgMob": "001-mob.jpg",
+      "description": "Коммерческий проект. Дизайн. Верстка",
+      "link": "https://mikeiv.github.io/VoGoo/"
+    },
+    {
+      "name": "Nerds",
+      "img": "003.jpg",
+      "imgMob": "",
+      "description": "Дипломный проект HTML Academy. Статичная верстка с адаптивом",
+      "link": "https://mikeiv.github.io/nerds/"
+    },
+    {
+      "name": "Gllacy",
+      "img": "002.jpg",
+      "imgMob": "",
+      "description": "Дипломный проект HTML Academy. Статичная верстка",
+      "link": "https://mikeiv.github.io/gllacy/"
+    }
+  ]
+}
+

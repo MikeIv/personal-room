@@ -1,0 +1,55 @@
+@use "../variables/_base-font-size.scss" as size;
+@use "../tools/functions" as *;
+@use "../variables/resolutions" as with;
+
+html,
+body {
+  font-size: size.$base-font-size;
+  background-color: var(--a-bg-primary);
+  color: var(--a-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--a-focus);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--a-accent-primary);
+  color: var(--a-bg-primary);
+}
+
