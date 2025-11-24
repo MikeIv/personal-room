@@ -4,11 +4,9 @@
 
 ### 💻 Frontend Developer
 
-> **Персональный сайт-портфолио** на Nuxt 4 с поддержкой мультиязычности, включающий разделы портфолио, полезных инструментов, статей и интерактивных примеров кода.
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](https://your-portfolio-url.com)
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/your-telegram)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-email@example.com)
+<a href="https://your-portfolio-url.com" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Portfolio-FF7139?style=for-the-badge&logo=firefox&logoColor=white" alt="Portfolio"></a>
+<a href="https://t.me/Mike_Iv" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
+<a href="mailto:mike@ivanov-post.ru" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
 
 </div>
 
@@ -91,7 +89,9 @@ Frontend разработчик, специализирующийся на со�
 
 ### 🌟 Избранные проекты
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=MikeIv&repo=personal-room&theme=dark)](https://github.com/MikeIv/personal-room)
+<a href="https://github.com/MikeIv/personal-room" target="_blank" rel="noopener noreferrer"><img src="https://github-readme-stats.vercel.app/api/pin/?username=MikeIv&repo=personal-room&theme=dark" alt="personal-room"></a>
+
+**personal web** - Личный веб-сайт и портфолио
 
 </div>
 
@@ -122,8 +122,8 @@ const aboutMe = {
 
 ### 📬 Связь со мной
 
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/your-telegram)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mike@ivanov-post.ru)
+<a href="https://t.me/Mike_Iv" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
+<a href="mailto:mike@ivanov-post.ru" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
 
 
 </div>
