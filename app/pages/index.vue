@@ -4,6 +4,10 @@ definePageMeta({
   layout: "home",
 });
 
+// Version
+const { data: versionData } = await useFetch<{ version: string }>("/version.json");
+const appVersion = computed(() => versionData.value?.version || "1.0.0");
+
 // Lang Switcher
 const { locale, locales, t } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
@@ -72,7 +76,7 @@ const navItems = computed(() => [
     </nav>
 
     <p :class="[$style.attention, 'a-font__s']">
-      {{ t("info.develop") }} <span>(v1.0.0)</span>
+      {{ t("info.develop") }} <span>(v{{ appVersion }})</span>
     </p>
   </section>
 </template>
@@ -122,14 +126,16 @@ const navItems = computed(() => [
 }
 
 .attention {
-  position: relative;
+  position: absolute;
+  bottom: rem(20);
+  left: rem(20);
   z-index: 1;
-  margin-top: rem(40);
   color: var(--a-text-secondary);
   text-transform: uppercase;
   opacity: 0.5;
   user-select: none;
   animation: fadeInUp 0.8s ease-out 0.6s both;
+  font-size: rem(10);
 
   span {
     text-transform: none;
