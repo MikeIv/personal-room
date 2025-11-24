@@ -4,6 +4,8 @@
 
 ### 💻 Frontend Developer
 
+> **Персональный сайт-портфолио** на Nuxt 4 с поддержкой мультиязычности, включающий разделы портфолио, полезных инструментов, статей и интерактивных примеров кода.
+
 [![Portfolio](https://img.shields.io/badge/Portfolio-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](https://your-portfolio-url.com)
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/your-telegram)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-email@example.com)
