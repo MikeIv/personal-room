@@ -10,6 +10,7 @@ const props = defineProps({
   },
   type: {
     type: String,
+    default: undefined,
     validator: (value: string) => ["btn"].includes(value),
   },
   target: {
@@ -22,11 +23,13 @@ const props = defineProps({
   },
   bgColor: {
     type: String,
+    default: undefined,
     validator: (value: string) =>
       ["accent", "primary", "secondary", "ghost"].includes(value),
   },
   fontSize: {
     type: String,
+    default: undefined,
     validator: (value: string) => ["s", "xs"].includes(value),
   },
 });

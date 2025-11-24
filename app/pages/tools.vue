@@ -20,15 +20,14 @@ const { toolsDescription } = toolsData();
   <section :class="[$style.tools, 'layout__wrapper']">
     <h1 :class="[$style.title, 'a-font__h1', 'hidden']">Инструменты</h1>
     <div :class="$style.header">
-      <li :class="[$style.headerTitle, 'a-font__s']">
+      <div :class="[$style.headerTitle, 'a-font__s']">
         {{ $t("tools.technologies") }}
-      </li>
+      </div>
       <ul :class="$style.headerList">
         <li
-          :class="[$style.headerItem, item.cell]"
           v-for="(item, index) in titleList"
           :key="index"
-          v-if="titleList"
+          :class="[$style.headerItem, item.cell]"
         >
           <div :class="$style.headerImgWrapper">
             <Icon :name="item.icon" filled />
@@ -38,8 +37,7 @@ const { toolsDescription } = toolsData();
               :href="`${item.href}`"
               :class="[$style.headerSourse, 'a-font__s']"
               target="_blank"
-              >{{ item.title }}</a
-            >
+            >{{ item.title }}</a>
             <a :href="`#${item.id}`" :class="[$style.headerLink, 'a-font__s']" title="nav">#</a>
           </div>
         </li>
@@ -47,75 +45,75 @@ const { toolsDescription } = toolsData();
     </div>
     <section :class="$style.content">
       <div
-        :class="$style.section"
-        :id="item.id"
         v-for="(item, index) in toolsDescription"
+        :id="item.id"
         :key="index"
+        :class="$style.section"
       >
         <div :class="$style.logoWrapper">
           <Icon :name="item.icon" filled />
         </div>
         <h2 :class="[$style.subtitle, 'a-font__h3']">{{ item.name }}</h2>
-        <div :class="$style.sectionPluginBlock" v-if="item.plugIn.length">
+        <div v-if="item.plugIn.length" :class="$style.sectionPluginBlock">
           <h4 :class="[$style.sectionHeader, 'a-font__h4']">Plug-in's</h4>
           <ul :class="$style.sectionListPlugin">
             <li
-              :class="$style.sectionItemPlugin"
               v-for="(plugin, pluginIndex) in item.plugIn"
               :key="pluginIndex"
+              :class="$style.sectionItemPlugin"
             >
               {{ (plugin as { name: string })?.name }}
             </li>
           </ul>
         </div>
-        <div :class="$style.sectionPluginBlock" v-if="item.links.length">
+        <div v-if="item.links.length" :class="$style.sectionPluginBlock">
           <h4 :class="[$style.sectionHeader, 'a-font__h4']">
             {{ $t("tools.links") }}
           </h4>
           <ul :class="$style.sectionListPlugin">
             <li
-              :class="$style.sectionItemPlugin"
               v-for="(link, linkIndex) in item.links"
               :key="linkIndex"
+              :class="$style.sectionItemPlugin"
             >
               <ALink
                 :href="link.href"
-                :linkText="link.text"
+                :link-text="link.text"
                 type="btn"
-                bgColor="secondary"
-                fontSize="s"
+                bg-color="secondary"
+                font-size="s"
               />
             </li>
           </ul>
         </div>
-        <div :class="$style.sectionPluginBlock" v-if="item.npm">
+        <div v-if="item.npm" :class="$style.sectionPluginBlock">
           <h4 :class="[$style.sectionHeader, 'a-font__h4']">
             {{ $t("tools.dependencies") }}
           </h4>
           <ul :class="$style.sectionListPlugin">
-            <li :class="$style.sectionItemPlugin" v-for="(link, npmIndex) in item.npm" :key="npmIndex">
+            <li v-for="(link, npmIndex) in item.npm" :key="npmIndex" :class="$style.sectionItemPlugin">
               <ALink
                 :href="link.href"
-                :linkText="link.text"
+                :link-text="link.text"
                 type="btn"
-                bgColor="primary"
-                fontSize="s"
+                bg-color="primary"
+                font-size="s"
               />
             </li>
           </ul>
         </div>
-        <div :class="$style.sectionPluginBlock" v-if="item.modules">
+        <div v-if="item.modules" :class="$style.sectionPluginBlock">
           <h4 :class="[$style.sectionHeader, 'a-font__h4']">
             {{ $t("tools.modules") }}
           </h4>
           <ul :class="$style.sectionListPlugin">
-            <li :class="$style.sectionItemPlugin" v-for="(link, moduleIndex) in item.modules" :key="moduleIndex">
+            <li v-for="(link, moduleIndex) in item.modules" :key="moduleIndex" :class="$style.sectionItemPlugin">
               <ALink
                 :href="link.href"
-                :linkText="link.text"
+                :link-text="link.text"
                 type="btn"
-                bgColor="primary"
-                fontSize="s"
+                bg-color="primary"
+                font-size="s"
               />
             </li>
           </ul>

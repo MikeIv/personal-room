@@ -46,12 +46,12 @@ const availableLocales = computed(() => {
       </a>
 
       <NuxtLink
+        v-for="localeItem in availableLocales"
+        :key="localeItem.code"
         class="header__lang a-font__s"
-        v-for="locale in availableLocales"
-        :key="locale.code"
-        :to="switchLocalePath(locale.code)"
+        :to="switchLocalePath(localeItem.code)"
       >
-        {{ locale.name }}
+        {{ localeItem.name }}
       </NuxtLink>
     </div>
 

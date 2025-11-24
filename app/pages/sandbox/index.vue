@@ -17,9 +17,9 @@ const { listItems } = componentsTitle();
       <h3 class="sandbox__links-title a-font__h3">Компоненты</h3>
       <ul class="sandbox__pages-links">
         <li
-          class="sandbox__pages-links-item"
           v-for="item in listItems"
           :key="item.id"
+          class="sandbox__pages-links-item"
         >
           <NuxtLink :to="item.path" class="sandbox__block-link a-font__m">
             <span class="a-font__s">{{ item.name }}</span>

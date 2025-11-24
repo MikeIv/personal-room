@@ -2,6 +2,7 @@
 const props = defineProps({
   bgColor: {
     type: String,
+    default: undefined,
     validator: (value: string) =>
       ["accent", "primary", "secondary", "ghost"].includes(value),
   },
@@ -11,6 +12,7 @@ const props = defineProps({
   },
   onlyIcon: {
     type: String,
+    default: undefined,
     validator: (value: string) => ["rounded", "square"].includes(value),
   },
   disabled: {

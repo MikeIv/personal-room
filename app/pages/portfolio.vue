@@ -48,40 +48,40 @@ const getImagePath = (filename: string): string => {
 </script>
 
 <template>
-  <section :class="[$style.portfolio, 'layout__wrapper']" v-if="workList.length > 0">
+  <section v-if="workList.length > 0" :class="[$style.portfolio, 'layout__wrapper']">
     <ul :class="$style.portfolioList" role="list">
       <li
-        :class="$style.portfolioItem"
         v-for="(item, index) in workList"
         :key="`portfolio-${index}`"
+        :class="$style.portfolioItem"
       >
         <AButton
           v-if="item.imgMob"
-          @handleClick="switchShow(index)"
           :class="$style.portfolioMobView"
-          onlyIcon="rounded"
-          bgColor="ghost"
+          only-icon="rounded"
+          bg-color="ghost"
           :aria-label="
             toggleView(index)
               ? 'Показать десктопную версию'
               : 'Показать мобильную версию'
           "
+          @handle-click="switchShow(index)"
         >
           <Mobile v-if="!toggleView(index)" />
           <Desktop v-if="toggleView(index)" />
         </AButton>
         <AButton
           v-if="item.name"
-          @handleClick="switchDescription(index)"
           :class="$style.portfolioItemInfoToggle"
-          onlyIcon="rounded"
-          bgColor="ghost"
+          only-icon="rounded"
+          bg-color="ghost"
           :aria-label="
             toggleDescription(index)
               ? 'Скрыть описание'
               : 'Показать описание'
           "
           :aria-expanded="toggleDescription(index)"
+          @handle-click="switchDescription(index)"
         >
           <Information v-if="!toggleDescription(index)" />
           <Close v-if="toggleDescription(index)" />
@@ -123,10 +123,10 @@ const getImagePath = (filename: string): string => {
             </h3>
             <ALink
               :href="item.link"
-              linkText="посмотреть"
+              link-text="посмотреть"
               type="btn"
-              bgColor="primary"
-              fontSize="s"
+              bg-color="primary"
+              font-size="s"
               :aria-label="`Открыть проект ${item.name} в новой вкладке`"
             />
           </header>

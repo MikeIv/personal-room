@@ -5,4 +5,3 @@ export interface typeToolsTitle {
   href: string;
   title: string;
 }
-

@@ -92,10 +92,8 @@ export default defineNuxtConfig({
             "ts-ignore": "allow-with-description",
           },
         ],
-        "no-console":
-          process.env.NODE_ENV === "production" ? "error" : "warn",
-        "no-debugger":
-          process.env.NODE_ENV === "production" ? "error" : "warn",
+        "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
+        "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
       },
     },
     checker: {
@@ -106,4 +104,3 @@ export default defineNuxtConfig({
     cache: true,
   },
 });
-
