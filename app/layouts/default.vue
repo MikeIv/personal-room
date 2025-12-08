@@ -1,5 +1,11 @@
 <script setup lang="ts">
+import NotificationToast from "~/components/NotificationToast.vue";
+import Header from "~/components/Layouts/Header/index.vue";
+import Breadcrumbs from "~/components/Common/Breadcrumbs/index.vue";
+import { useNotifications } from "~/composables/useNotifications";
+
 const route = useRoute();
+const { notifications, remove } = useNotifications();
 
 // Маппинг маршрутов на цвета из теплой палитры
 const pageColors = {
@@ -76,8 +82,12 @@ const backgroundStyle = computed(() => ({
     <Header />
 
     <main class="layout__wrapper">
+      <Breadcrumbs />
       <slot />
     </main>
+
+    <!-- Компонент уведомлений -->
+    <NotificationToast :notifications="notifications" :on-remove="remove" />
   </div>
 </template>
 
