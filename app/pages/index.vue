@@ -18,13 +18,7 @@ const availableLocales = computed(() => {
 });
 
 // Navigation items
-const navItems = computed(() => [
-  { key: "portf", path: "/portfolio" },
-  { key: "tools", path: "/tools" },
-  { key: "useful", path: "/useful" },
-  { key: "sandbox", path: "/sandbox" },
-  { key: "contacts", path: "/contacts" },
-]);
+const { navItems } = useNavigation();
 </script>
 
 <template>

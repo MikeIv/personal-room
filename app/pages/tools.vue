@@ -18,7 +18,12 @@ const { toolsDescription } = toolsData();
 
 <template>
   <section :class="[$style.tools, 'layout__wrapper']">
-    <h1 :class="[$style.title, 'a-font__h1', 'hidden']">Инструменты</h1>
+    <div :class="$style.pageHeader">
+      <h1 :class="[$style.pageTitle, 'a-font__h1']">Инструменты</h1>
+      <p :class="[$style.pageDescription, 'a-font__m']">
+        Технологии, инструменты и библиотеки, которые я использую в разработке
+      </p>
+    </div>
     <div :class="$style.header">
       <div :class="[$style.headerTitle, 'a-font__s']">
         {{ $t("tools.technologies") }}
@@ -128,8 +133,22 @@ const { toolsDescription } = toolsData();
   width: 100%;
 }
 
-.title {
-  margin-bottom: rem(32);
+.pageHeader {
+  margin-bottom: rem(48);
+  padding-bottom: rem(32);
+  border-bottom: 1px solid var(--a-border-light);
+}
+
+.pageTitle {
+  margin-bottom: rem(16);
+  color: var(--a-text-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.pageDescription {
+  color: var(--a-text-secondary);
+  line-height: var(--line-height-relaxed);
+  max-width: rem(600);
 }
 
 .header {
@@ -151,17 +170,64 @@ const { toolsDescription } = toolsData();
 }
 
 .headerItem {
+  position: relative;
   display: flex;
   align-items: center;
   gap: rem(12);
   padding: rem(12);
-  border: 1px solid var(--a-border-light);
+  border: 1px solid var(--a-border-medium);
   border-radius: var(--a-borderR--x6);
+  background-color: var(--a-bg-secondary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   transition: all 0.2s ease;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--a-color-blue);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  // Цветовые акценты для разных элементов
+  &:nth-child(6n + 1)::before {
+    background: var(--a-color-blue);
+  }
+
+  &:nth-child(6n + 2)::before {
+    background: var(--a-color-green);
+  }
+
+  &:nth-child(6n + 3)::before {
+    background: var(--a-color-purple);
+  }
+
+  &:nth-child(6n + 4)::before {
+    background: var(--a-color-orange);
+  }
+
+  &:nth-child(6n + 5)::before {
+    background: var(--a-color-teal);
+  }
+
+  &:nth-child(6n + 6)::before {
+    background: var(--a-color-pink);
+  }
 
   &:hover {
-    border-color: var(--a-border-medium);
-    background-color: var(--a-bg-secondary);
+    border-color: var(--a-border-dark);
+    background-color: var(--a-bg-accent);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+
+    &::before {
+      opacity: 1;
+    }
   }
 }
 
@@ -202,6 +268,7 @@ const { toolsDescription } = toolsData();
   gap: rem(48);
 }
 
+
 .section {
   padding-bottom: rem(32);
   border-bottom: 1px solid var(--a-border-light);
@@ -209,14 +276,57 @@ const { toolsDescription } = toolsData();
   &:last-child {
     border-bottom: none;
   }
+
+  // Цветовые акценты для разных секций
+  &:nth-child(6n + 1) .logoWrapper {
+    background: var(--a-color-blue-bg);
+  }
+
+  &:nth-child(6n + 2) .logoWrapper {
+    background: var(--a-color-green-bg);
+  }
+
+  &:nth-child(6n + 3) .logoWrapper {
+    background: var(--a-color-purple-bg);
+  }
+
+  &:nth-child(6n + 4) .logoWrapper {
+    background: var(--a-color-orange-bg);
+  }
+
+  &:nth-child(6n + 5) .logoWrapper {
+    background: var(--a-color-teal-bg);
+  }
+
+  &:nth-child(6n + 6) .logoWrapper {
+    background: var(--a-color-pink-bg);
+  }
+
+  &:hover .logoWrapper {
+    transform: scale(1.05);
+
+    :global(.nuxt-icon) {
+      transform: rotate(5deg);
+    }
+  }
 }
 
 .logoWrapper {
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: rem(60);
   height: rem(60);
   margin-bottom: rem(16);
+  padding: rem(8);
+  border-radius: var(--a-borderR--x6);
+  background: var(--a-color-blue-bg);
+  transition: all 0.3s ease;
+
+  :global(.nuxt-icon) {
+    transition: transform 0.3s ease;
+  }
 }
 
 .subtitle {

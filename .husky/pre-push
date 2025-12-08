@@ -1,5 +1,35 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Проверка, что пушим в ветку develop
+current_branch=$(git symbolic-ref --short HEAD)
+
+if [ "$current_branch" != "develop" ]; then
+  echo "⚠️  Внимание: Вы не в ветке develop. Текущая ветка: $current_branch"
+  echo "💡 Рекомендуется работать в ветке develop для всех изменений"
+  read -p "Продолжить пуш? (y/n) " -n 1 -r
+  echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    exit 1
+  fi
+fi
+
+# Если пушим в develop, проверяем что это правильный remote
+if [ "$current_branch" = "develop" ]; then
+  remote_name=$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null | cut -d'/' -f1 || echo "origin")
+  if [ "$remote_name" != "origin" ]; then
+    echo "⚠️  Внимание: Пуш в develop должен идти в origin/develop"
+    exit 1
+  fi
+fi
+
 node scripts/bump-version.js
 
+# После успешного пуша в develop, предлагаем создать MR
+if [ "$current_branch" = "develop" ]; then
+  echo ""
+  echo "💡 После пуша можно создать Pull Request в main:"
+  echo "   npm run create-mr"
+  echo "   или"
+  echo "   node scripts/create-mr.js"
+fi

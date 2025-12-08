@@ -14,7 +14,8 @@
     "format": "prettier --write .",
     "stylelint": "stylelint \"**/*.{vue,scss}\"",
     "stylelint:fix": "stylelint \"**/*.{vue,scss}\" --fix",
-    "prepare": "husky install"
+    "prepare": "husky",
+    "create-mr": "node scripts/create-mr.js"
   },
   "dependencies": {
     "@nuxt/icon": "^2.1.0",
