@@ -5,6 +5,9 @@ export default defineNuxtConfig({
   srcDir: "app",
   compatibilityDate: "2024-12-01",
   devtools: { enabled: true },
+  devServer: {
+    port: 3000,
+  },
   typescript: {
     strict: true,
   },
@@ -41,7 +44,14 @@ export default defineNuxtConfig({
       },
     ],
   },
-  components: [{ path: "components", pathPrefix: false }],
+  components: [
+    {
+      path: "~/components",
+      pathPrefix: false,
+      extensions: [".vue"],
+      ignore: ["**/*.js", "**/*.ts", "**/vite/**", "**/node_modules/**"],
+    },
+  ],
   vite: {
     plugins: [svgLoader({ svgo: false })],
     css: {

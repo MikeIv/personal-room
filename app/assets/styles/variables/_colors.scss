@@ -34,6 +34,43 @@
   --a-error: #dc3545;
   --a-warning: #ffc107;
   --a-info: #17a2b8;
+
+  /* Vibrant Complementary Colors */
+  --a-color-blue: #3b82f6;
+  --a-color-blue-light: #60a5fa;
+  --a-color-blue-dark: #2563eb;
+  --a-color-blue-bg: rgba(59, 130, 246, 0.1);
+  --a-color-blue-bg-hover: rgba(59, 130, 246, 0.15);
+
+  --a-color-green: #22c55e;
+  --a-color-green-light: #4ade80;
+  --a-color-green-dark: #16a34a;
+  --a-color-green-bg: rgba(34, 197, 94, 0.1);
+  --a-color-green-bg-hover: rgba(34, 197, 94, 0.15);
+
+  --a-color-purple: #a855f7;
+  --a-color-purple-light: #c084fc;
+  --a-color-purple-dark: #9333ea;
+  --a-color-purple-bg: rgba(168, 85, 247, 0.1);
+  --a-color-purple-bg-hover: rgba(168, 85, 247, 0.15);
+
+  --a-color-orange: #f97316;
+  --a-color-orange-light: #fb923c;
+  --a-color-orange-dark: #ea580c;
+  --a-color-orange-bg: rgba(249, 115, 22, 0.1);
+  --a-color-orange-bg-hover: rgba(249, 115, 22, 0.15);
+
+  --a-color-teal: #14b8a6;
+  --a-color-teal-light: #2dd4bf;
+  --a-color-teal-dark: #0d9488;
+  --a-color-teal-bg: rgba(20, 184, 166, 0.1);
+  --a-color-teal-bg-hover: rgba(20, 184, 166, 0.15);
+
+  --a-color-pink: #ec4899;
+  --a-color-pink-light: #f472b6;
+  --a-color-pink-dark: #db2777;
+  --a-color-pink-bg: rgba(236, 72, 153, 0.1);
+  --a-color-pink-bg-hover: rgba(236, 72, 153, 0.15);
 }
 
 /* Dark Theme Support */
@@ -59,6 +96,43 @@
     --a-link: #ffffff;
     --a-link-hover: #f8f9fa;
     --a-focus: #ffffff;
+
+    /* Vibrant Complementary Colors - Dark Theme */
+    --a-color-blue: #60a5fa;
+    --a-color-blue-light: #93c5fd;
+    --a-color-blue-dark: #3b82f6;
+    --a-color-blue-bg: rgba(59, 130, 246, 0.15);
+    --a-color-blue-bg-hover: rgba(59, 130, 246, 0.2);
+
+    --a-color-green: #4ade80;
+    --a-color-green-light: #86efac;
+    --a-color-green-dark: #22c55e;
+    --a-color-green-bg: rgba(34, 197, 94, 0.15);
+    --a-color-green-bg-hover: rgba(34, 197, 94, 0.2);
+
+    --a-color-purple: #c084fc;
+    --a-color-purple-light: #d8b4fe;
+    --a-color-purple-dark: #a855f7;
+    --a-color-purple-bg: rgba(168, 85, 247, 0.15);
+    --a-color-purple-bg-hover: rgba(168, 85, 247, 0.2);
+
+    --a-color-orange: #fb923c;
+    --a-color-orange-light: #fdba74;
+    --a-color-orange-dark: #f97316;
+    --a-color-orange-bg: rgba(249, 115, 22, 0.15);
+    --a-color-orange-bg-hover: rgba(249, 115, 22, 0.2);
+
+    --a-color-teal: #2dd4bf;
+    --a-color-teal-light: #5eead4;
+    --a-color-teal-dark: #14b8a6;
+    --a-color-teal-bg: rgba(20, 184, 166, 0.15);
+    --a-color-teal-bg-hover: rgba(20, 184, 166, 0.2);
+
+    --a-color-pink: #f472b6;
+    --a-color-pink-light: #f9a8d4;
+    --a-color-pink-dark: #ec4899;
+    --a-color-pink-bg: rgba(236, 72, 153, 0.15);
+    --a-color-pink-bg-hover: rgba(236, 72, 153, 0.2);
   }
 }
 

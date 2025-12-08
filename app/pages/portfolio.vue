@@ -49,6 +49,12 @@ const getImagePath = (filename: string): string => {
 
 <template>
   <section v-if="workList.length > 0" :class="[$style.portfolio, 'layout__wrapper']">
+    <div :class="$style.pageHeader">
+      <h1 :class="[$style.pageTitle, 'a-font__h1']">Портфолио</h1>
+      <p :class="[$style.pageDescription, 'a-font__m']">
+        Примеры моих работ и проектов
+      </p>
+    </div>
     <ul :class="$style.portfolioList" role="list">
       <li
         v-for="(item, index) in workList"
@@ -142,20 +148,52 @@ const getImagePath = (filename: string): string => {
 <style module lang="scss">
 .portfolio {
   width: 100%;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.pageHeader {
+  margin-bottom: rem(48);
+  padding-bottom: rem(32);
+  border-bottom: 1px solid var(--a-border-light);
+}
+
+.pageTitle {
+  margin-bottom: rem(16);
+  color: var(--a-text-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.pageDescription {
+  color: var(--a-text-secondary);
+  line-height: var(--line-height-relaxed);
+  max-width: rem(600);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .portfolioList {
   display: grid;
   grid-template-columns: 1fr;
-  gap: rem(32);
+  gap: rem(24);
   width: 100%;
 
   @include tablet {
     grid-template-columns: repeat(2, 1fr);
+    gap: rem(32);
   }
 
   @include desktop {
     grid-template-columns: repeat(3, 1fr);
+    gap: rem(40);
   }
 }
 
@@ -166,11 +204,51 @@ const getImagePath = (filename: string): string => {
   border: 1px solid var(--a-border-light);
   border-radius: var(--a-borderR--card);
   overflow: hidden;
-  transition: all 0.2s ease;
+  background-color: var(--a-bg-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+
+  // Цветовые акценты для разных карточек
+  &:nth-child(3n + 1) {
+    border-top: 3px solid var(--a-color-blue);
+
+    .portfolioImgWrapper {
+      background: linear-gradient(135deg, var(--a-color-blue-bg) 0%, var(--a-bg-accent) 100%);
+    }
+  }
+
+  &:nth-child(3n + 2) {
+    border-top: 3px solid var(--a-color-purple);
+
+    .portfolioImgWrapper {
+      background: linear-gradient(135deg, var(--a-color-purple-bg) 0%, var(--a-bg-accent) 100%);
+    }
+  }
+
+  &:nth-child(3n + 3) {
+    border-top: 3px solid var(--a-color-orange);
+
+    .portfolioImgWrapper {
+      background: linear-gradient(135deg, var(--a-color-orange-bg) 0%, var(--a-bg-accent) 100%);
+    }
+  }
 
   &:hover {
     border-color: var(--a-border-medium);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+  }
+
+  &:nth-child(3n + 1):hover {
+    box-shadow: 0 8px 24px var(--a-color-blue-bg-hover);
+  }
+
+  &:nth-child(3n + 2):hover {
+    box-shadow: 0 8px 24px var(--a-color-purple-bg-hover);
+  }
+
+  &:nth-child(3n + 3):hover {
+    box-shadow: 0 8px 24px var(--a-color-orange-bg-hover);
   }
 }
 
@@ -178,7 +256,16 @@ const getImagePath = (filename: string): string => {
 .portfolioItemInfoToggle {
   position: absolute;
   top: rem(12);
-  z-index: 2;
+  z-index: 3;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+  }
 }
 
 .portfolioMobView {
@@ -194,7 +281,7 @@ const getImagePath = (filename: string): string => {
   width: 100%;
   padding-top: 56.25%; // 16:9 aspect ratio
   overflow: hidden;
-  background-color: var(--a-bg-secondary);
+  background: linear-gradient(135deg, var(--a-bg-secondary) 0%, var(--a-bg-accent) 100%);
 }
 
 .portfolioImg {
@@ -207,8 +294,21 @@ const getImagePath = (filename: string): string => {
 }
 
 .portfolioDescription {
-  padding: rem(20);
+  padding: rem(24);
   background-color: var(--a-bg-primary);
+  border-top: 1px solid var(--a-border-light);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .portfolioDescriptionHead {
