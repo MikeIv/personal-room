@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, defineAsyncComponent, type Component } from "vue";
+import { computed, defineAsyncComponent, type Component, type DeepReadonly } from "vue";
 import type { NotificationType, Notification, NotificationAction, CustomIcon } from "~/composables/useNotifications";
 
 /**
@@ -21,7 +21,7 @@ export interface NotificationToastProps {
   /** Z-index контейнера */
   zIndex?: number;
   /** Список уведомлений для отображения */
-  notifications: Notification[];
+  notifications: DeepReadonly<Notification[]>;
   /** Функция для удаления уведомления по ID */
   onRemove: (id: string) => void;
   /** Целевой элемент для Teleport (по умолчанию 'body') */
