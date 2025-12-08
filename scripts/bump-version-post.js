@@ -7,21 +7,18 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const rootDir = join(__dirname, "..");
 
-// Проверяем, есть ли staged изменения (кроме version.json)
+// Проверяем последний коммит - не был ли он уже коммитом версии
 try {
-  const stagedFiles = execSync("git diff --cached --name-only", {
+  const lastCommitMessage = execSync("git log -1 --pretty=%B", {
     cwd: rootDir,
     encoding: "utf-8",
   }).trim();
 
-  // Фильтруем файлы version.json
-  const relevantFiles = stagedFiles
-    .split("\n")
-    .filter((file) => file && !file.includes("version.json"));
-
-  // Если нет staged изменений (кроме version.json), не обновляем версию
-  if (relevantFiles.length === 0) {
-    console.log("ℹ️  Нет изменений для коммита, версия не обновляется");
+  // Если последний коммит уже был обновлением версии, не создаем новый
+  if (lastCommitMessage.startsWith("chore: bump version to")) {
+    console.log(
+      "ℹ️  Пропускаем обновление версии (последний коммит уже обновил версию)",
+    );
     process.exit(0);
   }
 } catch {
@@ -64,14 +61,32 @@ writeFileSync(
   "utf-8",
 );
 
-// Добавляем изменения в git
+// Создаем коммит с обновлением версии
 try {
   execSync(`git add "${versionPath}" "${publicVersionPath}" "${packagePath}"`, {
     cwd: rootDir,
     stdio: "pipe",
   });
 
-  console.log(`✅ Версия обновлена до ${newVersion}`);
+  // Проверяем, есть ли изменения
+  const status = execSync("git status --porcelain", {
+    cwd: rootDir,
+    encoding: "utf-8",
+  });
+
+  if (status.trim()) {
+    // Временно отключаем post-commit hook чтобы избежать рекурсии
+    execSync(
+      `git -c core.hooksPath=/dev/null commit -m "chore: bump version to ${newVersion}"`,
+      {
+        cwd: rootDir,
+        stdio: "inherit",
+      },
+    );
+    console.log(`✅ Версия обновлена до ${newVersion} и закоммичена`);
+  } else {
+    console.log(`ℹ️  Версия уже актуальна: ${newVersion}`);
+  }
 } catch (error) {
   console.error("❌ Ошибка при обновлении версии:", error.message);
   process.exit(1);

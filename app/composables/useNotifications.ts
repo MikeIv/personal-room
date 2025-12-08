@@ -16,7 +16,7 @@ export interface NotificationOptions {
   /** Заголовок уведомления */
   title?: string;
   /** Дополнительные действия */
-  actions?: NotificationAction[];
+  actions?: readonly NotificationAction[];
   /** HTML контент вместо текста (используйте с осторожностью) */
   html?: boolean;
   /** Не закрывать при клике на уведомление */
